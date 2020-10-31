@@ -12,13 +12,14 @@ module.exports = function(){
     });
     
     router.post('/addMovie', async(req,res) => {
-        const {title,year,poster,imdbId} = req.body;
+        const {title,year,poster,imdbID,type} = req.body;
 
         const movie = new Movie({ 
             title,
             year,
             poster,
-            imdbId
+            imdbID,
+            type
         });
         await movie.save();
         res.json({message:"Movie added successfully"});

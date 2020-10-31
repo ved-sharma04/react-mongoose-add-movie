@@ -25,7 +25,7 @@ ReactDOM.render(
             <AddMovie />
           </Route>
 
-          <Route path="/booking-page/:movieId">
+          <Route path="/booking-page/:movieTitle">
             <BookingPage />
           </Route>
 

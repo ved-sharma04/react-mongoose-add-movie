@@ -34,6 +34,10 @@ export default function App() {
     fetchMovies();
   }
 
+  function top() {
+    document.getElementById( 'top' ).scrollIntoView();    
+}
+
   function fetchMovies() {
     fetch(`http://localhost:5000/getMovies/${searchValue}`)
       .then((response) => response.json())
@@ -43,6 +47,7 @@ export default function App() {
 
   return (
     <Container style={{ PaddingTop: "100px" }}>
+      <div id="top"></div>
       <SearchSection
         onChangeSearchValue={onChangeSearchValue}
         onKeyPressSearchValue={onKeyPressSearchValue}
@@ -68,7 +73,7 @@ export default function App() {
                         {movie.year}-{movie.type}
                       </CardText>
                       <Link
-                        to={`/booking-page/${movie.imdbId}`}
+                        to={`/booking-page/${movie.title}`}
                         className="btn btn-primary"
                       >
                         Book Now
