@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { InputGroup, Input, Button } from 'reactstrap'
+import {useHistory} from 'react-router-dom'
+import { InputGroup, Input, Button, Container } from 'reactstrap'
 
 export default function AddMovie () {
   const [title, setTitle] = useState('')
@@ -8,6 +9,9 @@ export default function AddMovie () {
   const [poster, setPoster] = useState('')
   const [imdbID, setId] = useState('')
   const [type, setType] = useState('')
+
+  const history = useHistory();
+
 
   function onClickInsert () {
     console.log(imdbID)
@@ -26,7 +30,11 @@ export default function AddMovie () {
   }
 
   return (
-    <section className='search-section'>
+      <Container>
+    <section >
+        <br/>
+        <h3>Add Details Below</h3>
+        <br/>
       <p>Enter the Movie Name</p>
 
       <Input
@@ -46,7 +54,7 @@ export default function AddMovie () {
       <br />
       <p>Enter the imdbID</p>
       <Input
-        placeholder='Enter The ID'
+        placeholder='Enter The imdbID'
         onChange={e => {
           setId(e.target.value)
         }}
@@ -54,7 +62,7 @@ export default function AddMovie () {
       <br />
       <p>Enter the Type</p>
       <Input
-        placeholder='Enter The type'
+        placeholder='Enter The Type'
         onChange={e => {
           setType(e.target.value)
         }}
@@ -69,9 +77,17 @@ export default function AddMovie () {
         }}
       />
       <br />
-      <Button color='success' onClick={onClickInsert}>
-        Insert Data
+      <Button className=" mr-2" color='success' onClick={onClickInsert}>
+        Add Movie
+      </Button>
+      <Button
+        type='button'
+        className='btn btn-secondary mr-2'
+        onClick={() => history.goBack()}
+      >
+        Go Back
       </Button>
     </section>
+    </Container>
   )
 }

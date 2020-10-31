@@ -1,5 +1,6 @@
 main {
-  height: 100vh;
+  height: 120vh;
+  background-color: cadetblue;
 }
 
 .footer {
@@ -7,4 +8,8 @@ main {
   position: fixed;
   bottom: 0;
   right: 60px;
+}
+.search-section{
+background-color: cadetblue;
+
 }

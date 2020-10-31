@@ -17,21 +17,25 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
     <Router history={history}>
-      <Header />
-      <main>
+    <Header />
+       <main>
         <Switch>
-          <Route path="/booking-page/addmovie">
+          
+          <Route path="/add-movie">
             <AddMovie />
           </Route>
+
           <Route path="/booking-page/:movieId">
             <BookingPage />
           </Route>
+
           <Route path="/">
             <App />
           </Route>
+
         </Switch>
-      </main>
-      <footer className="footer text-right">Copyright @ 2020 Book My Show</footer>
+       </main>
+      <footer className="footer text-right">Copyright @ 2020 Ved Sharma</footer>
     </Router>
   </React.StrictMode>,
   rootElement

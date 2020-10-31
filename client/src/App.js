@@ -42,7 +42,7 @@ export default function App() {
   }
 
   return (
-    <Container style={{ marginTop: "60px" }}>
+    <Container style={{ PaddingTop: "100px" }}>
       <SearchSection
         onChangeSearchValue={onChangeSearchValue}
         onKeyPressSearchValue={onKeyPressSearchValue}
@@ -80,12 +80,7 @@ export default function App() {
             })}
         </Row>
       </section>
-      <br />
       
-      <br />
-      <h1>Insert Movie Below</h1>
-      <br />
-      <AddMovie></AddMovie>
     </Container>
   );
 }
